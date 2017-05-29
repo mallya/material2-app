@@ -1,7 +1,19 @@
-<md-sidenav-layout [class.m2app-dark]="isDarkTheme">
+<md-sidenav-container [class.m2app-dark]="isDarkTheme">
 
   <md-sidenav #sidenav mode="side" class="app-sidenav">
-    Sidenav
+      <md-card>
+      Clients <br/>
+      <md-checkbox class="app-sidenav-checkbox" [checked]="true">All</md-checkbox> 
+      <br/>
+      <md-checkbox class="app-sidenav-checkbox" [checked]="true">Anthem CR</md-checkbox>
+      <br/>
+      <md-checkbox class="app-sidenav-checkbox" [checked]="true">BCBSGA</md-checkbox>
+      <br/>
+      <md-checkbox class="app-sidenav-checkbox" [checked]="true">BCBSNC</md-checkbox>
+      <br/>
+      <md-checkbox class="app-sidenav-checkbox" [disabled]="true">Disabled</md-checkbox>
+      <br/>
+      </md-card>
   </md-sidenav>
 
   <md-toolbar color="primary">
@@ -9,7 +21,7 @@
       <i class="material-icons app-toolbar-menu">menu</i>
     </button>
 
-    Angular Material2 Example App
+    Med Policy Search
 
     <span class="app-toolbar-filler"></span>
     <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
@@ -17,7 +29,7 @@
 
   <div class="app-content">
 
-    <md-card>
+    <!--<md-card>
       <button md-button>FLAT</button>
       <button md-raised-button md-tooltip="This is a tooltip!">RAISED</button>
       <button md-raised-button color="primary">PRIMARY RAISED</button>
@@ -36,40 +48,98 @@
       <md-radio-button name="symbol">Beta</md-radio-button>
       <md-radio-button name="symbol" disabled>Gamma</md-radio-button>
     </md-card>
-
-    <md-card class="app-input-section">
-      <md-input placeholder="First name"></md-input>
+-->
+   <!-- <md-card class="app-input-section">-->
+<!--      <md-input placeholder="First name"></md-input>
 
       <md-input #nickname placeholder="Nickname" maxlength="50">
         <md-hint align="end">
           {{nickname.characterCount}} / 50
         </md-hint>
-      </md-input>
+      </md-input>-->
 
-      <md-input>
+  <!--
+      <button md-icon-button [mdMenuTriggerFor]="menu">
+  <i class="material-icons">list</i>
+</button>
+<md-menu #menu="mdMenu">
+<button md-menu-item>
+    <span>Redial</span>
+  </button>
+  <button md-menu-item disabled>
+
+    <span>Check voicemail</span>
+  </button>
+  <button md-menu-item>
+    
+    <span>Disable alerts</span>
+  </button>
+
+</md-menu>-->
+    <md-card>
+      <button md-button [md-menu-trigger-for]="menu">
+        <i class="material-icons">view_list</i>
+      </button>
+    
+
+    <md-menu #menu="mdMenu">
+      <button md-menu-item>Drug</button>
+      <button md-menu-item>Case</button>
+      <button md-menu-item>Client</button>
+    </md-menu>
+      <md-input-container style="width:80%"> 
+        <input mdInput>
         <md-placeholder>
-          <i class="material-icons app-input-icon">android</i> Favorite phone
+          <i class="material-icons app-input-icon">find_in_page</i> Search
         </md-placeholder>
-      </md-input>
-
-      <md-input placeholder="Motorcycle model">
+      </md-input-container>
+</md-card>
+  <!--    <md-input placeholder="Motorcycle model">
         <span md-prefix>
           <i class="material-icons app-input-icon">motorcycle</i>
           &nbsp;
         </span>
-      </md-input>
-    </md-card>
-
+      </md-input>-->
+<!--    </md-card>
+-->
     <md-card>
+      <h2>Med Policy Details</h2>
       <md-list class="app-list">
+        <md-list-item >
+          
+          <h3 md-line>Drug Name:</h3>
+          <p md-line class="demo-secondary-text">Herceptin</p>
+          
+          <h3 md-line>Med Policy Link:</h3>
+          <p md-line class="demo-secondary-text">
+          <a href="ww.cms.gov">www.cms.gov</a></p>
+          <h3 md-line>Clients:</h3>
+          <p md-line class="demo-secondary-text">Anthem CR, BSBSGA, Empire </p>
+        </md-list-item>
+      </md-list>
+      <md-list class="app-list">
+        <md-list-item >
+          
+          <h3 md-line>Drug Name:</h3>
+          <p md-line class="demo-secondary-text">Herceptin</p>
+          
+          <h3 md-line>Med Policy Link:</h3>
+          <p md-line class="demo-secondary-text">
+          <a href="ww.cms.gov">www.cms.gov</a></p>
+          <h3 md-line>Clients:</h3>
+          <p md-line class="demo-secondary-text">Anthem CR, BSBSGA, Empire </p>
+        </md-list-item>
+      </md-list>
+<!--      <md-list class="app-list">
         <md-list-item *ngFor="let food of foods">
+          
           <h3 md-line>{{food.name}}</h3>
           <p md-line class="demo-secondary-text">{{food.rating}}</p>
         </md-list-item>
-      </md-list>
+      </md-list>-->
     </md-card>
 
-    <md-card>
+<!--    <md-card>
       <md-spinner class="app-spinner"></md-spinner>
       <md-spinner color="accent" class="app-spinner"></md-spinner>
     </md-card>
@@ -103,33 +173,23 @@
           <p>FIRE</p>
         </md-tab>
       </md-tab-group>
-    </md-card>
+    </md-card>-->
 
-    <md-card>
+    <!--<md-card>
       <md-icon>build</md-icon>
     </md-card>
 
-    <md-card>
-      <button md-button [md-menu-trigger-for]="menu">
-        MENU
-      </button>
-    </md-card>
 
-    <md-menu #menu="mdMenu">
-      <button md-menu-item>Lemon</button>
-      <button md-menu-item>Lime</button>
-      <button md-menu-item>Banana</button>
-    </md-menu>
 
     <md-card>
       <p>Last dialog result: {{lastDialogResult}}</p>
       <button md-raised-button (click)="openDialog()">DIALOG</button>
       <button md-raised-button (click)="showSnackbar()">SNACKBAR</button>
-    </md-card>
+    </md-card>-->
 
   </div>
 
-</md-sidenav-layout>
+</md-sidenav-container>
 
 <span class="app-action" [class.m2app-dark]="isDarkTheme">
   <button md-fab><md-icon>check circle</md-icon></button>
